@@ -1,0 +1,6 @@
+[submodule "balena-mqtt-gateway"]
+	path = balena-mqtt-gateway
+	url = https://github.com/adrianbenavides/balena-mqtt-gateway
+[submodule "arduino-helpers"]
+	path = arduino-helpers
+	url = https://github.com/adrianbenavides/arduino-helpers
