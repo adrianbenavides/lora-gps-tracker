@@ -24,7 +24,7 @@ void loop()
     delay(100);
     gpsParser = neo6m.read();
 
-    if (!gpsParser.location.isValid() || !gpsParser.date.isValid() || !gpsParser.time.isValid())
+    if (!gpsParser.location.isValid())
         return;
 
     neo6m.print(gpsParser);
@@ -35,17 +35,8 @@ void loop()
     char lng[8];
     snprintf(lng, 8, "%g", gpsParser.location.lng());
 
-    char dateTime[26];
-    snprintf(dateTime, 26, "%d-%d-%dT%d:%d:%d+00:00",
-             gpsParser.date.year(),
-             gpsParser.date.month(),
-             gpsParser.date.day(),
-             gpsParser.time.hour(),
-             gpsParser.time.minute(),
-             gpsParser.time.second());
-
     char temp[255];
-    snprintf(temp, 255, "lat=%s,lng=%s,date=%s", lat, lng, dateTime);
+    snprintf(temp, 255, "lat=%s,lng=%s", lat, lng);
     std::string loraMessage = std::string(temp);
     loraDevice.send(loraMessage);
 }
