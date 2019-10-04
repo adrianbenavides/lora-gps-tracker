@@ -4,7 +4,7 @@
 .vscode/launch.json
 .vscode/ipch
 
-# files from shared directory
+# files from arduino-helpers
 makefile
 lib
 include/lora.h

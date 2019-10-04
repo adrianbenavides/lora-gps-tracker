@@ -33,7 +33,7 @@ void loop()
     if (!loraMessage.length())
         return;
 
-    std::string mqttMessage = "mqtt-gateway " + loraMessage;
+    std::string mqttMessage = "gps " + loraMessage;
     std::string topic = "sensor/gps";
     Serial.printf("Publish message: %s, on topic: %s\n", mqttMessage.c_str(), topic.c_str());
     pubsub.publish(topic.c_str(), mqttMessage.c_str());
