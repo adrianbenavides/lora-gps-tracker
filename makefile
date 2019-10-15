@@ -5,6 +5,7 @@
 .PHONY: submodules_update
 submodules_update:
 	@git submodule foreach git pull origin master
+	@make copy_helpers
 
 .PHONY: copy_helpers
 copy_helpers:

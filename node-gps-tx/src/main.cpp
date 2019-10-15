@@ -14,7 +14,7 @@ void setup()
     Serial.println();
     randomSeed(micros());
 
-    nodeMcu.setup();
+    nodeMcu.setupWithoutWiFi();
     loraDevice.setup();
     neo6m.setup();
 }

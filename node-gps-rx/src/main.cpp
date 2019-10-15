@@ -19,7 +19,7 @@ void setup()
     Serial.println();
     randomSeed(micros());
 
-    nodeMcu.setup();
+    nodeMcu.setupWithWiFi();
     loraDevice.setup();
     mqtt.setup(pubsub, mqttOnMessageReceived, nodeMcu.deviceId);
 }
